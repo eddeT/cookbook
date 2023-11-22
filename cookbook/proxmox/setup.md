@@ -2,7 +2,7 @@
 
 Download latest Proxmox ISO (8.0):\
 https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso
-![Screenshot 2023-11-22](image.png)
+![Screenshot 2023-11-22](proxmox-2023-11-22.png)
 
 Flash from file to USB using Balena Etcher:\
 https://github.com/balena-io/etcher
