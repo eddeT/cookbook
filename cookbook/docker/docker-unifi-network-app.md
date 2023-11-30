@@ -1,3 +1,15 @@
+# Docker unifi network app
+
+Neat way to run unifi network app in a container. Remember to take backups and you can have a new server up and running in no time.
+
+## Table of Contents
+- [Docker unifi network app](#docker-unifi-network-app)
+  - [Table of Contents](#table-of-contents)
+  - [Docker setup](#docker-setup)
+  - [Adding self signed certificate to keystore](#adding-self-signed-certificate-to-keystore)
+
+
+## Docker setup
 source: https://github.com/linuxserver/docker-unifi-network-application
 
 Helpful additional info: https://github.com/linuxserver/docker-unifi-network-application/issues/13
@@ -63,3 +75,25 @@ My ./init-mongo.js file:
 db.getSiblingDB("unifi-db").createUser({user: "unifi-db-user", pwd: "<pw>", roles: [{role: "dbOwner", db: "unifi-db"}]});
 db.getSiblingDB("unifi-db_stat").createUser({user: "unifi-db-user", pwd: "<pw>", roles: [{role: "dbOwner", db: "unifi-db_stat"}]});
 ```
+---
+
+## Adding self signed certificate to keystore
+
+sources:\
+https://community.ui.com/questions/UniFi-Controller-SSL-Certificate-installation/2e0bb632-bd9a-406f-b675-651e068de973
+https://stackoverflow.com/questions/906402/how-to-import-an-existing-x-509-certificate-and-private-key-in-java-keystore-to
+
+List current unifi keystore in ./config/data\
+```keytool -v -list -keystore keystore -storepass aircontrolenterprise```
+
+Create pkcs12 cert to import into keystore\
+```openssl pkcs12 -export -in wildcard-<domain-suffix>.crt -inkey wildcard-<domain-suffix>.key -out wildcard-unifi.p12 -name unifi -CAfile <domain>-ca.pem -caname root```
+
+Stop docker container:\
+```docker compose stop```
+
+Add the new pkcs12 into keystore:\
+```keytool -importkeystore -deststorepass aircontrolenterprise -destkeystore keystore -srckeystore wildcard-unifi.p12 -srcstoretype PKCS12 -srcstorepass <password entered for pkcs12> -alias unifi```
+
+Start docker container :\
+```docker compose start```
