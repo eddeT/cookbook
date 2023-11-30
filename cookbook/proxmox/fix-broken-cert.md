@@ -8,4 +8,4 @@ If you accidentally uploaded a cert/key that shows erros when trying to recconec
 
 ```systemctl restart pveproxy```
 
-You know have a new self-signed cert generated and access should be restored.
+You now have a new self-signed cert generated and access should be restored.
