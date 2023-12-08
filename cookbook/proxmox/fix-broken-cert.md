@@ -9,3 +9,5 @@ If you accidentally uploaded a cert/key that shows erros when trying to recconec
 ```systemctl restart pveproxy```
 
 You now have a new self-signed cert generated and access should be restored.
+
+Make sure certificate chain begins with proxmox cert and ends with CA cert.
