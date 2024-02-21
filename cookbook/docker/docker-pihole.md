@@ -8,10 +8,12 @@ services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
-    ports:a
+    ports:
       - "53:53/tcp"
       - "53:53/udp"
       - "8443:80/tcp"
+    dns:
+      - 127.0.0.1
     environment:
       TZ: 'Europe/Stockholm'
       WEBPASSWORD: '<password>'
