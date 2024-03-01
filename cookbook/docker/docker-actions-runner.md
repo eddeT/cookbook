@@ -2,16 +2,24 @@
 Using: https://github.com/myoung34/docker-github-actions-runner
 
 ## Single runner for specific repo
+```yaml
+---
+name: <your project name>
+services:
+    github-runner:
+        restart: always
+        container_name: <container_name>
+        environment:
+            - REPO_URL=<repo_url>
+            - RUNNER_NAME=<runner_name>
+            - RUNNER_TOKEN=<runner_token>
+            - RUNNER_WORKDIR=/tmp/github-runner-<name>
+            - RUNNER_GROUP=Default
+            - LABELS=docker-test
+            - TZ=Europe/Berlin
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /tmp/github-runner-your-repo:/tmp/github-runner-your-repo
+        image: myoung34/github-runner:latest
 ```
-sudo docker run -d --restart always --name <container_name> \
-  -e REPO_URL="<repo_url>" \
-  -e RUNNER_NAME="<runner_name>" \
-  -e RUNNER_TOKEN="<runner_token>" \
-  -e RUNNER_WORKDIR="/tmp/github-runner-<name>" \
-  -e RUNNER_GROUP="Default" \
-  -e LABELS="<optional labels>" \
-  -e TZ="Europe/Berlin" \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /tmp/github-runner-your-repo:/tmp/github-runner-your-repo \
-  myoung34/github-runner:latest
-```
+---
