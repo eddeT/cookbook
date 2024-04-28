@@ -10,7 +10,7 @@ services:
     command:
       - serve
     environment:
-      NTFY_BASE_URL: https:/<hostname>:55000 # does not work with port
+      NTFY_BASE_URL: https://<hostname>:55000 # does not work with port
       NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
       NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
       NTFY_AUTH_DEFAULT_ACCESS: deny-all
