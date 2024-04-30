@@ -11,5 +11,5 @@ Install on hardware.
 I currently use:\
 ASUS PN53 / Ryzen 7 7735H / 64 GB RAM / 1TB m2
 
-Run this useful script to remove annoying popups about license.:\
+Run this useful script to remove annoying popups about licensing.:\
 https://github.com/foundObjects/pve-nag-buster/
