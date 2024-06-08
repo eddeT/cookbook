@@ -13,7 +13,7 @@ Do this routine at least two times.
  * 12 Alternating plank walk, slowly
  * 25 Heel Raises
  * 25 Toe Raises
- * 10 L Heel Lifts
- * 10 R Heel Lifts
+ * 10 L Heel Raises
+ * 10 R Heel Raises
  * 10 Slow breaths prayer position
 ---
