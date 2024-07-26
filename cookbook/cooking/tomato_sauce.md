@@ -1,6 +1,6 @@
 # Tomato Sauce
 
-## Pizza saucue
+## Pizza sauce
 ### Summary
 Good sauce for pizza or a simple pasta.
 
