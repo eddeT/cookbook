@@ -4,7 +4,7 @@ source: https://forum.proxmox.com/threads/resize-ubuntu-vm-disk.117810/post-5100
 For when you underestimated how much storage a VM needs.
 
 * Increase disk size from pve gui
-  * Make usre host is turned off
+  * Make sure host is turned off
   * Host -> Hardware -> Disk Action
 * Boot freshly extended host
 * Check free space
